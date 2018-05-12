@@ -209,8 +209,10 @@ export default class HomeScreen extends Component {
           <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={this.state.selectedIndex}
-          buttons={['Stories', 'Anonymous']}
-          />
+          buttons={[
+            {element: () => <Icon name="open-book" type="entypo"/> }, 
+            {element: () => <Icon name="mask" type="entypo"/>}
+          ]}/>
           <View style={styles.containerReverse}>
             <View style={styles.container}>
               <ScrollView>
