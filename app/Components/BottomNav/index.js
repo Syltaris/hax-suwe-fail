@@ -17,14 +17,6 @@ export default class BottomNav extends Component {
                 style={styles.container_bottomNavButtons}
                 onPress={() => {this.props.navigation.navigate('HomeScreen')}}>
                     <Icon
-                    name="home"
-                    type="entypo"
-                    color={Colors.ICON_PRIMARY}/>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                style={styles.container_bottomNavButtons}
-                onPress={() => {this.props.navigation.navigate('MediaScreen')}}>
-                    <Icon
                     name="md-paper"
                     type="ionicon"
                     color={Colors.ICON_PRIMARY}/>
@@ -33,15 +25,7 @@ export default class BottomNav extends Component {
                 style={styles.container_bottomNavButtons}
                 onPress={() => {this.props.navigation.navigate('NetworkScreen')}}>
                     <Icon
-                    name="network"
-                    type="entypo"
-                    color={Colors.ICON_PRIMARY}/>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                style={styles.container_bottomNavButtons}
-                onPress={() => {this.props.navigation.navigate('LogbookScreen')}}>
-                    <Icon
-                    name="book"
+                    name="chat"
                     type="entypo"
                     color={Colors.ICON_PRIMARY}/>
                 </TouchableOpacity>

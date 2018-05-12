@@ -39,7 +39,7 @@ export default styles = StyleSheet.create({
       backgroundColor: Colors.PRIMARY,
     },
     container_bottomNavButtons: {
-      width: '25%',
+      width: '50%',
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
