@@ -52,8 +52,8 @@ export default class NetworkScreen extends Component {
   loadProfiles() {
     return (
         <Swiper
-          disableTopSwipe
-          disableBottomSwipe
+          verticalSwipe={false}
+          onSwipedRight={() => {this.setState({showModal: true})}}
           style={{cardVerticalMargin: 100}}
           cards={this.state.profilesData}
           infinite
@@ -88,7 +88,7 @@ export default class NetworkScreen extends Component {
               </Card>
             )
           }}
-          onSwiped={(cardIndex) => {console.log(cardIndex)}}
+          //onSwiped={(cardIndex) => {console.log(cardIndex)}}
           onSwipedAll={() => {console.log('onSwipedAll')}}
           cardIndex={0}
           backgroundColor={"#F5FCFF"}
@@ -100,6 +100,25 @@ export default class NetworkScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+         <Modal
+            transparent
+            animationType="fade"
+            visible={this.state.showModal}
+            onRequestClose={() => this.setState({showModal: false})}
+            >
+              <View style={styles.modal_transparentBlack}>
+                <Card>
+                  <Text style={styles.text_header}>Bo Le has accepted your request!</Text>
+                  <Button 
+                  title={'GO TO CHAT'}
+                  style={styles.button_fullWidth} 
+                  onPress={() => {
+                    this.setState({showModal: false});
+                    this.props.navigation.navigate('ChatScreen');
+                  }}/>
+                </Card>
+              </View>
+            </Modal>
           <MainHeader 
           title="EXPERTS"
           navigation={this.props.navigation} />

@@ -73,19 +73,17 @@ export default class MediaScreen extends Component {
               title="POSTS"
               navigation={this.props.navigation} />
               <Modal
-              animationType="slide"
-              transparent={false}
-              visible={this.state.showPostModal}
-              onRequestClose={() => this.setState({showPostModal: false})}
+              transparent
+              animationType="fade"
+              visible={this.state.showModal}
+              onRequestClose={() => this.setState({showModal: false})}
               >
-                <Button
-                title="CLOSE"
-                onPress={() => this.setState({showPostModal: false})} />
-                <WebView
-                source={{uri: this.state.postURLtoShow}}
-                >
-
-                </WebView>
+                <View style={styles.modal_transparentBlack}>
+                  <Card>
+                    <Text style={styles.text_header}>Bo Le has accepted your request!</Text>
+                    <Button style={styles.button_fullWidth} onClick={() => this.props.navigation.navigate('ChatScreen')} />
+                  </Card>
+                </View>
               </Modal>
               <View style={styles.containerReverse}>
                 <View style={styles.container}>

@@ -32,8 +32,9 @@ export default class ChatScreen extends Component {
   render() {
     return (
           <View style={styles.container}>
+        
               <MainHeader 
-              title="PROFILE"
+              title="BO LE"
               navigation={this.props.navigation} />
               <View style={styles.containerReverse}>
                 <View style={styles.container}>

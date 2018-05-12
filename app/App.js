@@ -13,6 +13,7 @@ import RegisterScreen from './Screens/RegisterScreen';
 import ProfileScreen from './Screens/ProfileScreen';
 import HomeScreen from './Screens/HomeScreen';
 import NetworkScreen from './Screens/NetworkScreen';
+import ChatScreen from './Screens/ChatScreen';
 import LogbookScreen from './Screens/LogbookScreen';
 
 import CustomDrawerComponent from './Components/CustomDrawerComponent';
@@ -53,6 +54,12 @@ export default RootNavigator = DrawerNavigator({
     navigationOptions: {
       header: null,
     },
+  },
+  ChatScreen: {
+    screen: ChatScreen,
+    navigationOptions: {
+      header: null,
+    }
   },
   LogbookScreen: {
     screen: LogbookScreen,
