@@ -4,7 +4,8 @@ import {
   View,
   Modal,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 import { 
   Avatar,
@@ -37,10 +38,23 @@ export default class NetworkScreen extends Component {
         avatarImg: require('../../res/img/bo_le.jpg'),
         name: 'Bo Le',
         position: 'Wall Street Hustler',
-        shortDescription: 'From an early age, Bo Le had a knack for rhythm. But his meteoric rise to stardom didn’t happen overnight. Considering that Bo Le’s roots stemmed from the housing projects of Brooklyn, NY, and grew up in extreme poverty, he faced many failures and roadblocks in his life. But he never gave up. No matter what happened to him, no matter what failures he faced, he pushed through, growing as a person, and maturing to become a better individual.',
+        shortDescription: ['From an early age, Bo Le had a knack for rhythm. But his meteoric rise to stardom didn’t happen overnight. Considering that Bo Le’s roots stemmed from the housing projects of Brooklyn, NY, and grew up in extreme poverty, he faced many failures and roadblocks in his life. But he never gave up. No matter what happened to him, no matter what failures he faced, he pushed through, growing as a person, and maturing to become a better individual.'],
         
         description: 'Cras magna quam, malesuada a accumsan fringilla, rutrum vel mi. Integer laoreet volutpat est non malesuada. Duis vitae risus ex. Proin nisl risus, viverra a neque non, tristique vulputate ante. Donec cursus faucibus felis non bibendum. Praesent a accumsan metus. Praesent ac gravida tellus. Aliquam non magna sagittis, vulputate turpis eu, aliquam justo. Sed venenatis diam eget varius pulvinar. Suspendisse potenti. Quisque in felis sagittis, blandit lectus in, facilisis augue. Quisque ultrices eget nisi sit amet bibendum. Nullam vitae blandit justo. Praesent semper suscipit ipsum ut placerat. Morbi eu felis urna. Mauris porttitor tempus justo eget ornare. Etiam viverra blandit dui, non tincidunt nulla egestas tempus.',
-      }],
+      },
+      {
+        avatarImg: require('../../res/img/jia_jun.jpg'),
+        name: 'Jia Jun',
+        position: 'CEO of Manri',
+        shortDescription: ['Jiajun\'s startup, Manri, was backed with 30.9 million RMB from investors. Manri failed. The $30.9 million RMB was lost. Jiajun was devastated. Fortunately, the support and guidance from his mentor led to his next idea – streaming live video while participating in activities.',
+
+        "Jiajun raised money on crowdfunding websites like Kickstarter. Funkyvid app launched in 2010, and is the most downloaded streaming app to date.",
+        
+        "Without the unwavering guidance from my mentor and kind support from the public who instilled their faith in me and Funkyvid, this would not be possible. Now I have a strong calling to give back by sharing my stories and mentoring others."],
+        
+        description: 'Cras magna quam, malesuada a accumsan fringilla, rutrum vel mi. Integer laoreet volutpat est non malesuada. Duis vitae risus ex. Proin nisl risus, viverra a neque non, tristique vulputate ante. Donec cursus faucibus felis non bibendum. Praesent a accumsan metus. Praesent ac gravida tellus. Aliquam non magna sagittis, vulputate turpis eu, aliquam justo. Sed venenatis diam eget varius pulvinar. Suspendisse potenti. Quisque in felis sagittis, blandit lectus in, facilisis augue. Quisque ultrices eget nisi sit amet bibendum. Nullam vitae blandit justo. Praesent semper suscipit ipsum ut placerat. Morbi eu felis urna. Mauris porttitor tempus justo eget ornare. Etiam viverra blandit dui, non tincidunt nulla egestas tempus.',
+      }
+    ],
 
       showModal: false,
       profileToShow: undefined
@@ -107,8 +121,16 @@ export default class NetworkScreen extends Component {
             onRequestClose={() => this.setState({showModal: false})}
             >
               <View style={styles.modal_transparentBlack}>
-                <Card>
+                <Card
+                containerStyle={{width: '90%'}}>
+                  <View style={{width: '100%', height: 150, alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
+                      <Image
+                      style={{width: 100, height: 100, borderRadius: 50}}
+                      source={this.state.profilesData[1].avatarImg}
+                    />
                   <Text style={styles.text_header}>Bo Le has accepted your request!</Text>
+
+                </View>
                   <Button 
                   title={'GO TO CHAT'}
                   style={styles.button_fullWidth} 
