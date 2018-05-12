@@ -55,7 +55,7 @@ export default styles = StyleSheet.create({
   },
   card_profileItem: {
     width: '92.5%',
-    height: 600,
+    height: 500,
     flexDirection: 'row',
   },
   modal_transparentBlack: {
