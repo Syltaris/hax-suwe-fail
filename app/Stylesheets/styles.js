@@ -100,8 +100,8 @@ export default styles = StyleSheet.create({
     borderRadius: 135,
   },
     logo_style: {
-      width: 200,
-      height: 230,
+      width: 180,
+      height: 210,
       margin: 25,
     },
   login_button_container: {

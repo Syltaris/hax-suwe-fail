@@ -27,6 +27,7 @@ export default class NetworkScreen extends Component {
       profilesData: [{
         avatarImg: require('../../res/img/steve_knobs.jpg'),
         name: 'Hugh Mungus',
+        rating: 3.5,
         position: 'African Program Staff, Engineers Without Borders China',
         shortDescription: ['“Edison failed 10, 000 times before he made the electric light. Do not be discouraged if you fail a few times.”',
         "“I’ve missed more than 9000 shots in my career. I’ve lost almost 300 games. 26 times, I’ve been trusted to take the game winning shot and missed. I’ve failed over and over and over again in my life. And that is why I succeed.”"
@@ -37,6 +38,7 @@ export default class NetworkScreen extends Component {
       {
         avatarImg: require('../../res/img/bo_le.jpg'),
         name: 'Bo Le',
+        rating: 4.0,
         position: 'Wall Street Hustler',
         shortDescription: ['From an early age, Bo Le had a knack for rhythm. Considering that Bo Le’s roots stemmed from the housing projects of Brooklyn, NY, he faced many failures and roadblocks in his life. But he never gave up. No matter what happened to him, no matter what failures he faced, he pushed through, growing and maturing to become a better individual.'],
         
@@ -45,6 +47,7 @@ export default class NetworkScreen extends Component {
       {
         avatarImg: require('../../res/img/jia_jun.jpg'),
         name: 'Jia Jun',
+        rating: 2.2,
         position: 'CEO of Manri',
         shortDescription: ['Jiajun\'s startup, Manri, was backed with 30.9 million RMB from investors. Manri failed. The $30.9 million RMB was lost. Jiajun was devastated.',
         "Without the unwavering guidance from my mentor and kind support from the public who instilled their faith in me and Funkyvid, this would not be possible. Now I have a strong calling to give back by sharing my stories and mentoring others."],
@@ -87,7 +90,7 @@ export default class NetworkScreen extends Component {
                   <Rating
                     type="star"
                     fractions={1}
-                    startingValue={3.6}
+                    startingValue={profile.rating}
                     imageSize={20}
                     onFinishRating={this.ratingCompleted}
                     style={{ paddingVertical: 10 }} />
