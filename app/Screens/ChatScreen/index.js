@@ -69,6 +69,10 @@ export default class ChatScreen extends Component {
         } , 1000);
     }
 
+    componentWillUnmount() {
+        clearInterval();
+    }
+
     populateChats() {
         return this.state.chats && this.state.chats.map(c =>
             <View key={c.message}
@@ -100,8 +104,9 @@ export default class ChatScreen extends Component {
                     this.state.showReview
                     ?
                     <Card
-                    containerStyle={{width: '90%'}}>
-                    <View style={{width: '100%', height: 150, alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
+                    containerStyle={{width: '100%'}}>
+                    <View style={{width: '100%', height: 150,
+                    alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
                         <Text style={styles.text_header}>How well would you rate his advice?</Text>
                         <Rating
                         showRating
@@ -116,7 +121,6 @@ export default class ChatScreen extends Component {
                     title={'SUBMIT'}
                     style={styles.button_fullWidth} 
                     onPress={() => {
-                        this.setState({showModal: false});
                         this.props.navigation.navigate('HomeScreen');
                     }}/>
                     </Card>
