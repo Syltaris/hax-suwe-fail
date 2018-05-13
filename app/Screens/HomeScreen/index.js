@@ -13,6 +13,7 @@ import {
   Input,
   Icon,
   ButtonGroup,
+  Badge,
 } from 'react-native-elements';
 
 import MainHeader from '../../Components/MainHeader';
@@ -45,7 +46,15 @@ export default class HomeScreen extends Component {
               avatarUri: 'https://source.unsplash.com/random/22x22',
               comment: ["These are nice advice because many of us will be inspired to try in what we failed to do some says : try and try until you commit your success in the end"],
             },
-          ]
+          ],
+          tags: [{
+            tag: 'electric cars',
+            color: "#FF851B"
+          },
+          {
+            tag: 'innovation',
+            color: "#2ECC40"
+          }]
         },
       ],
       anonymousPosts: [
@@ -81,7 +90,12 @@ export default class HomeScreen extends Component {
               "“Continuous effort – not strength or intelligence – is the key to unlocking our full potential.” -Winston Churchill"
               ],
             },
-          ]
+          ],
+          tags: [{
+            tag: 'promotion',
+            color:"#39CCCC"
+          },
+        ]
         },
         {
           name: 'Lazy Magpie',
@@ -138,7 +152,7 @@ export default class HomeScreen extends Component {
                 )
               }
           </View>
-          <View style={{flexDirection: 'row', paddingTop: 10}}>
+          <View style={{flexDirection: 'row', paddingTop: 10, width: '100%'}}>
             <Icon
               size={20}
               name="like"
@@ -146,6 +160,16 @@ export default class HomeScreen extends Component {
             <Text style={{fontWeight: 'bold', paddingLeft: 5}}>
               {p.likes} Likes {p.comments.length} Comments
             </Text>
+            {
+              p.tags && p.tags.map(t => 
+              <View style={{paddingLeft: 10}} key={t.tag}s>
+                <Badge 
+                  containerStyle={{backgroundColor: t.color}}>
+                  <Text>{t.tag}</Text>
+                </Badge>
+              </View>
+              )
+            }
           </View>
           {
             p.comments.map(c => 
